@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detailed NbS Project Map</title>
+    <title>NbS Project Formulation Framework</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,6 +15,10 @@
             align-items: center;
             margin: 0;
             padding: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; 
         }
         h1 {
             color: #1565c0;
@@ -27,19 +31,16 @@
             margin-bottom: 30px;
             color: #546e7a;
         }
-        
         #diagram-scroll-container {
             width: 95%;
-            height: 85vh; 
+            height: 85vh;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            overflow: auto; 
+            overflow: auto;
             padding: 40px;
             position: relative;
         }
-
-
         .mermaid {
             min-width: 1800px;
             height: 100%;
@@ -48,22 +49,23 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <h1>NbS Project Formulation Framework</h1>
-    <p class="intro">Detailed Conceptual Map based on GIZ Guide (Pages 18-70). Scroll to explore.</p>
+    <p class="intro">Conceptual Map: Comprehensive Methodology for Climate Action</p>
 
     <div id="diagram-scroll-container">
         <div class="mermaid">
             graph TD
-
 
             classDef mainNode fill:#1565c0,stroke:#0d47a1,stroke-width:4px,color:#fff,font-size:24px,font-weight:bold,padding:20px;
             classDef stepGroup fill:#e3f2fd,stroke:#2196f3,stroke-width:3px,color:#000,font-size:20px,font-weight:bold;
             classDef concept fill:#fff,stroke:#607d8b,stroke-width:2px,color:#333,font-size:16px;
             classDef detail fill:#f5f5f5,stroke:#cfd8dc,stroke-width:1px,color:#455a64,font-size:14px,font-style:italic;
             classDef note fill:#fff9c4,stroke:#fbc02d,stroke-width:1px,color:#555,font-size:13px;
+
             ROOT[PROJECT FORMULATION<br/>Nature-based Solutions for Climate Action]:::mainNode
+
             subgraph CYCLE_AREA [Adaptive Management Cycle]
                 direction LR
                 C1(1. Plan):::concept --> C2(2. Execute):::concept
@@ -73,45 +75,43 @@
             end
             ROOT --> CYCLE_AREA
             
-
             ROOT --> S1(STEP 1: UNDERSTAND CONTEXT<br/>Diagnose & Align):::stepGroup
             
             S1 --> S1_A[Climate & Eco Lenses]:::concept
             S1_A --- D1_A["Mitigation: Reduce/Capture GHGs<br/>(Target: < 1.5°C warming)"]:::detail
             S1_A --- D1_B["Adaptation: Adjust systems to<br/>moderate harm or exploit opportunities"]:::detail
-            S1_A --- D1_C["Concepts: EbA (Ecosystem-based Adaptation)<br/>& Eco-DRR (Disaster Risk Reduction)"]:::detail
+            S1_A --- D1_C["Concepts: EbA / Eco-DRR"]:::detail
 
             S1 --> S1_B[Policy Framework]:::concept
-            S1_B --- D1_D["International: Paris Agreement, SDGs,<br/>Sendai Framework"]:::detail
-            S1_B --- D1_E["National: NDCs (Contributions),<br/>NAPs (Adaptation Plans)"]:::detail
+            S1_B --- D1_D["International: NDCs / NAPs"]:::detail
+            S1_B --- D1_E["National: NBSAPs / Climate Strategies"]:::detail
 
             S1 --> S1_C[Territorial Diagnosis]:::concept
-            S1_C --- D1_F["Analyze Dimensions:<br/>1. Social (Poverty, Education)<br/>2. Economic (Livelihoods)<br/>3. Political (Power dynamics)<br/>4. Environmental (Ecosystem health)"]:::note
-
+            S1_C --- D1_F["Analyze Dimensions:<br/>1. Social / 2. Economic / 3. Political / 4. Environmental"]:::note
 
             ROOT --> S2(STEP 2: ANALYZE SCOPE<br/>Stakeholders & Risks):::stepGroup
             
             S2 --> S2_A[Stakeholder Mapping]:::concept
-            S2_A --- D2_A["Influence vs Interest Matrix:<br/>- Key Players (High/High)<br/>- Keep Satisfied (High Infl/Low Int)<br/>- Keep Informed (Low Infl/Low Int)"]:::note
+            S2_A --- D2_A["Matrix: Influence vs Interest<br/>(Key Players, Satisfied, Informed)"]:::note
             
             S2 --> S2_B[Climate Risk Analysis]:::concept
-            S2_B --- D2_B["RISK FORMULA:<br/>Risk = Hazard (Event) x Exposure (Presence) x Vulnerability"]:::detail
+            S2_B --- D2_B["RISK FORMULA:<br/>Risk = Hazard x Exposure x Vulnerability"]:::detail
             D2_B --- D2_B2["Vulnerability = Sensitivity - Adaptive Capacity"]:::detail
-            S2_B --- D2_C["Tool: Impact Chains<br/>(Signal -> Intermediate Impact -> Risk)"]:::detail
+            S2_B --- D2_C["Tool: Impact Chains (Signal -> Impact -> Risk)"]:::detail
 
             S2 --> S2_C[Biological Connectivity]:::concept
-            S2_C --- D2_D["Geospatial Data:<br/>Identify Corridors & KBAs (Key Biodiversity Areas)"]:::detail
-            S2_C --- D2_E["Methodology: ELSA Maps<br/>(Essential Life Support Areas)"]:::detail
+            S2_C --- D2_D["Geospatial Data: KBAs / Corridors"]:::detail
+            S2_C --- D2_E["Methodology: ELSA Maps (Essential Life Support Areas)"]:::detail
 
             ROOT --> S3(STEP 3: PROJECT MATRIX<br/>Objectives & Indicators):::stepGroup
             
             S3 --> S3_A[Define Objectives]:::concept
-            S3_A --- D3_A["NbS Actions (Field):<br/>Restoration, Protection, Sustainable Management"]:::detail
-            S3_A --- D3_B["Enabling Conditions:<br/>1. Policy Strengthening<br/>2. Financial Instruments<br/>3. Capacity Building<br/>4. Technology & Research"]:::note
+            S3_A --- D3_A["NbS Actions (Field):<br/>Restoration, Protection, Management"]:::detail
+            S3_A --- D3_B["Enabling Conditions: Policy, Finance, Capacity, Research"]:::note
             
             S3 --> S3_B[Select Indicators]:::concept
-            S3_B --- D3_C["Process Indicators (Short Term):<br/>Inputs (Resources) & Outputs (Products generated)"]:::detail
-            S3_B --- D3_D["Outcome Indicators (Long Term):<br/>Impacts (Changes in state/behavior)"]:::detail
+            S3_B --- D3_C["Process Indicators (Short Term):<br/>Inputs & Outputs"]:::detail
+            S3_B --- D3_D["Outcome Indicators (Long Term):<br/>Results & Impacts"]:::detail
             
             S3 --> S3_C[Operational Planning]:::concept
             S3_C --- D3_E["Activities, Budget & Gantt Chart"]:::detail
@@ -119,28 +119,34 @@
             ROOT --> S4(STEP 4: MONITOR & LEARN<br/>Assumptions & Learning):::stepGroup
             
             S4 --> S4_A[Identify Assumptions]:::concept
-            S4_A --- D4_A["Context: Beliefs about the environment/people"]:::detail
-            S4_A --- D4_B["Process: Causal logic (If A, then B)"]:::detail
-            S4_A --- D4_C["Implementation: External risks (Politics, Weather)"]:::detail
+            S4_A --- D4_A["Types: Context, Process, Implementation"]:::detail
             
             S4 --> S4_B[Learning Products]:::concept
-            S4_B --- D4_D["Formats to share knowledge:<br/>- 2-page Summaries<br/>- Photo-essays (Before/After)<br/>- Video testimonials<br/>- Systematized lessons"]:::note
+            S4_B --- D4_D["Formats: Photo-essays, Video Testimonials, Systematization"]:::note
+
             linkStyle default stroke:#78909c,stroke-width:2px;
 
         </div>
     </div>
 
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
         mermaid.initialize({ 
             startOnLoad: true, 
             theme: 'base',
             flowchart: { 
-                useMaxWidth: false, /* ESTO ES CRUCIAL PARA EL ZOOM */
+                useMaxWidth: false,
                 htmlLabels: true,
                 curve: 'basis'
             }
         });
+
+        // Bloqueo de teclado y menú contextual
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'i') || e.keyCode === 123) { 
+                return false;
+            }
+        };
     </script>
 
 </body>
